@@ -206,7 +206,7 @@ int main(int argc, const char * argv[])
 {
     NSString* binary = [NSString stringWithUTF8String:argv[1]];
     NSString* dylib = [NSString stringWithUTF8String:argv[2]];
-    DYLIB_PATH = [NSString stringWithFormat:@"@executable_path/%@", dylib];
+    DYLIB_PATH = [NSString stringWithFormat:@"@rpath/%@", dylib];
     NSLog(@"dylib path %@", DYLIB_PATH);
     
     inject_file(binary, DYLIB_PATH);
